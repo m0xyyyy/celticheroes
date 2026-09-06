@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Master's Grimoire — NPC Explorer</title>
+<meta name="description" content="A modern web-based Celtic Heroes NPC and enemy database explorer.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="bg-orb orb-a"></div><div class="bg-orb orb-b"></div>
+<header class="topbar">
+  <div class="brand"><div class="brand-mark">✦</div><div><div class="brand-title">Master's Grimoire</div><div class="brand-sub">NPC / Enemy Explorer</div></div></div>
+  <div class="top-actions"><button class="ghost-btn" id="themeBtn" title="Toggle theme">☾</button><div class="version">WEB EDITION <span>v1</span></div></div>
+</header>
+<main class="shell">
+  <section class="hero">
+    <div><div class="eyebrow">CELTIC HEROES DATABASE</div><h1>Know your enemy.</h1><p>Search monsters, inspect combat stats, abilities, loot, scripts and spawn locations — all from your browser.</p></div>
+    <div class="hero-stat"><span id="mobCount">—</span><small>NPCs indexed</small></div>
+  </section>
+  <section class="workspace">
+    <aside class="sidebar">
+      <div class="mode-tabs"><button class="mode active" data-mode="npc">NPC Search</button><button class="mode" data-mode="loot">Loot Sets</button><button class="mode" data-mode="item">Item Search</button></div>
+      <div class="search-card">
+        <label id="searchLabel">Search by name</label>
+        <div class="search-wrap"><span>⌕</span><input id="searchInput" autocomplete="off" placeholder="Try “Lore Eater” or “wolf”…"><button id="clearSearch">×</button></div>
+        <div class="id-row"><input id="idInput" inputmode="numeric" placeholder="ID"><button id="idSearch">ID Search</button></div>
+        <div class="checks"><label><input type="checkbox" id="autoSearch" checked> <span>Auto search</span></label><label><input type="checkbox" id="itemSearch"> <span>Item mode</span></label></div>
+      </div>
+      <div class="results-head"><span>Results</span><span id="resultCount">0</span></div>
+      <div class="results" id="results"></div>
+      <div class="sidebar-foot"><span class="dot"></span><span>Local database • no account needed</span></div>
+    </aside>
+    <section class="content" id="content">
+      <div class="empty-state" id="emptyState"><div class="empty-icon">✦</div><h2>Choose an NPC</h2><p>Search above and select a result to open its full dossier.</p><div class="tips"><span>⌕ Name search</span><span># ID search</span><span>↯ Instant details</span></div></div>
+      <div id="dossier" class="hidden"></div>
+    </section>
+  </section>
+</main>
+<div class="modal hidden" id="modal"><div class="modal-backdrop" data-close></div><div class="modal-panel"><button class="modal-close" data-close>×</button><div id="modalBody"></div></div></div>
+<script src="app.js"></script>
+</body></html>
